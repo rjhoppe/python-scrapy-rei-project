@@ -1,0 +1,22 @@
+## Scrapy project init cmds
+scrapy startproject rei
+cd rei
+scrapy genspider products rei.com
+tree
+
+## Search "what is my user agent" and paste in user agent in settings.py
+
+scrapy crawl products
+
+## To get a single listing run:
+scrapy shell [individual product url]
+
+Inside the interactive shell
+response.css("h1#product-page-title")
+response.css("h1#product-page-title::text").get()
+
+## To export to JSON
+scrapy crawl products -o products.json
+
+## To export to .csv
+scrapy crawl products -o products.csv
